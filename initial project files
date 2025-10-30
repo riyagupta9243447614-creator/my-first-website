@@ -1,0 +1,217 @@
+# Character to Number Conversion
+
+# Method 1: Using ord() function
+char = 'A'
+number = ord(char)
+print(f"Character '{char}' to number: {number}")
+# Output: Character 'A' to number: 65
+
+# Method 2: Converting digits
+digit_char = '7'
+digit_number = int(digit_char)
+print(f"Digit '{digit_char}' to number: {digit_number}")
+# Output: Digit '7' to number: 7
+
+# Method 3: Multiple characters
+text = "ABC"
+numbers = [ord(ch) for ch in text]
+print(f"Text '{text}' to numbers: {numbers}")
+# Output: Text 'ABC' to numbers: [65, 66, 67]
+
+# Method 4: Number to Character using chr()
+num = 65
+character = chr(num)
+print(f"Number {num} to character: '{character}'")
+# Output: Number 65 to character: 'A'
+
+
+# Boolean Values and Operators
+
+# Boolean Values
+true_value = True
+false_value = False
+print(f"True: {true_value}, False: {false_value}")
+
+# Comparison Operators
+a, b = 10, 5
+print(f"a > b: {a > b}")    # Greater than
+print(f"a < b: {a < b}")    # Less than  
+print(f"a == b: {a == b}")  # Equal to
+print(f"a != b: {a != b}")  # Not equal to
+print(f"a >= b: {a >= b}")  # Greater than or equal
+print(f"a <= b: {a <= b}")  # Less than or equal
+
+# Logical Operators
+x, y = True, False
+print(f"x and y: {x and y}")  # AND - Both must be True
+print(f"x or y: {x or y}")    # OR - At least one True
+print(f"not x: {not x}")      # NOT - Reverse the value
+
+# Real-world examples
+age = 25
+has_license = True
+can_drive = age >= 18 and has_license
+print(f"Can drive: {can_drive}")
+
+# Boolean with strings
+name = "John"
+is_john = name == "John"
+print(f"Is name John: {is_john}")
+
+
+
+# Conditional Statements
+
+# 1. Simple if statement
+number = 10
+if number > 0:
+    print("Number is positive")
+
+# 2. if-else statement
+age = 16
+if age >= 18:
+    print("You are an adult")
+else:
+    print("You are a minor")
+
+# 3. if-elif-else statement
+marks = 85
+if marks >= 90:
+    grade = "A"
+elif marks >= 80:
+    grade = "B" 
+elif marks >= 70:
+    grade = "C"
+elif marks >= 60:
+    grade = "D"
+else:
+    grade = "F"
+print(f"Marks: {marks}, Grade: {grade}")
+
+# 4. Nested if statements
+temperature = 25
+is_sunny = True
+
+if temperature > 20:
+    if is_sunny:
+        print("Perfect weather for outing!")
+    else:
+        print("Weather is warm but not sunny")
+else:
+    print("It's cold outside")
+
+# 5. Multiple conditions
+salary = 50000
+experience = 3
+if salary > 40000 and experience >= 2:
+    print("Eligible for loan")
+else:
+    print("Not eligible for loan")
+
+
+
+
+# Iteration Statements - Complete Guide
+
+print("=== WHILE LOOP Examples ===")
+# 1. Basic while loop
+count = 1
+while count <= 5:
+    print(f"Count: {count}")
+    count += 1
+
+# 2. While loop with user input
+total = 0
+number = 1
+while number != 0:
+    number = int(input("Enter a number (0 to stop): "))
+    total += number
+print(f"Total sum: {total}")
+
+print("\n=== FOR LOOP Examples ===")
+# 3. Basic for loop with range
+for i in range(5):
+    print(f"Number: {i}")
+
+# 4. For loop with specific range
+for i in range(2, 6):  # From 2 to 5
+    print(f"Range number: {i}")
+
+# 5. For loop with step
+for i in range(1, 10, 2):  # 1,3,5,7,9
+    print(f"Step number: {i}")
+
+print("\n=== BREAK Statement ===")
+# 6. Using break to exit loop
+for i in range(10):
+    if i == 5:
+        print("Breaking at 5")
+        break
+    print(f"Current: {i}")
+
+print("\n=== CONTINUE Statement ===")
+# 7. Using continue to skip iteration
+for i in range(1, 6):
+    if i == 3:
+        print("Skipping 3")
+        continue
+    print(f"Processing: {i}")
+
+print("\n=== PASS Statement ===")
+# 8. Using pass as placeholder
+for i in range(3):
+    if i == 1:
+        pass  # Do nothing, just placeholder
+    else:
+        print(f"Value: {i}")
+
+print("\n=== REAL-WORLD EXAMPLES ===")
+# 9. Number guessing game
+import random
+target = random.randint(1, 10)
+attempts = 3
+
+while attempts > 0:
+    guess = int(input(f"Guess the number (1-10), {attempts} attempts left: "))
+    
+    if guess == target:
+        print("🎉 Congratulations! You guessed it!")
+        break
+    elif guess < target:
+        print("Too low!")
+    else:
+        print("Too high!")
+    
+    attempts -= 1
+else:
+    print(f"😞 Game over! The number was {target}")
+
+# 10. Processing list with continue and break
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("\nProcessing numbers:")
+for num in numbers:
+    if num % 2 == 0:
+        continue  # Skip even numbers
+    if num > 7:
+        break    # Stop if number > 7
+    print(f"Processing odd number: {num}")
+
+# 11. While-else and For-else
+print("\n=== WHILE-ELSE EXAMPLE ===")
+search_num = 5
+counter = 1
+while counter <= 3:
+    if counter == search_num:
+        print(f"Found {search_num}!")
+        break
+    counter += 1
+else:
+    print(f"{search_num} not found in range")
+
+print("\n=== FOR-ELSE EXAMPLE ===")
+for i in range(1, 4):
+    if i == 5:
+        print("Found 5!")
+        break
+else:
+    print("5 not found in range")
